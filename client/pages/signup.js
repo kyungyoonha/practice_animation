@@ -5,13 +5,15 @@ import { Input, Button } from '../components/Form';
 import { Container } from '../components/Layout';
 import useInputs from '../hooks/useInputs';
 
-const initialState = {
+const initialValue = {
+  name: '',
   email: '',
   pw: '',
+  pwConfirm: '',
 };
 
-const Signin = () => {
-  const { inputs, onChange } = useInputs(initialState);
+const Signup = () => {
+  const { inputs, onChange } = useInputs(initialValue);
 
   const onSubmit = useCallback((e) => {
     console.log('제출');
@@ -20,10 +22,20 @@ const Signin = () => {
   return (
     <Container>
       <Form>
-        <h1>로그인</h1>
+        <h1>회원가입</h1>
+        <Input
+          label="이름"
+          name="name"
+          value={inputs.name}
+          placeholder="이름를 입력해주세요"
+          required
+          onChange={onChange}
+        />
+
         <Input
           label="이메일"
           name="email"
+          type="email"
           value={inputs.email}
           placeholder="이메일를 입력해주세요"
           required
@@ -40,6 +52,16 @@ const Signin = () => {
           onChange={onChange}
         />
 
+        <Input
+          label="비밀번호 체크"
+          name="pwConfirm"
+          type="password"
+          value={inputs.pwConfirm || ''}
+          placeholder="패스워드를 한번 더 입력해주세요"
+          required
+          onChange={onChange}
+        />
+
         <Button onClick={onSubmit} color="blue">
           로그인
         </Button>
@@ -48,7 +70,7 @@ const Signin = () => {
   );
 };
 
-export default Signin;
+export default Signup;
 
 const Form = styled.form`
   margin-top: 80px;
