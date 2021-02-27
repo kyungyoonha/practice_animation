@@ -15,7 +15,15 @@ const Input = ({
   return (
     <Wrapper>
       <label>{label}</label>
-      <input name={name} value={value} type={type} placeholder={placeholder} onChange={onChange} required={required} />
+      <input
+        name={name}
+        value={value}
+        type={type}
+        placeholder={placeholder}
+        onChange={onChange}
+        required={required}
+        autoComplete="off"
+      />
       <p className={error ? 'err on' : 'err'}>{error}</p>
     </Wrapper>
   );

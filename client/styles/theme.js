@@ -4,8 +4,8 @@ const theme = {
   brown: ['#e5ad87', '#e29f76', '#e08d60'],
   gray: ['#adb5bd', '#868e96', '#343a40'],
   green: ['#37b24d', '#2f9e44', '#2b8a3e'],
-  mint: '#d3f9d8',
-  red: '##c92a2a',
+  blue: ['blue'],
+  red: ['#c92a2a'],
 };
 
 export default theme;

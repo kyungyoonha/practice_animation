@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import styled from 'styled-components';
 
-import { Input } from '../components/Form';
+import { Input, Button } from '../components/Form';
 import { Container } from '../components/Layout';
 
 const Signup = () => {
@@ -14,6 +14,12 @@ const Signup = () => {
       [name]: value,
     });
   }, []);
+
+  const onSubmit = useCallback((e) => {
+    e.preventDefault();
+    console.log('제출');
+  }, []);
+
   return (
     <Container>
       <Form>
@@ -36,6 +42,10 @@ const Signup = () => {
           required
           onChange={onChange}
         />
+
+        <Button onClick={onSubmit} color="blue">
+          로그인
+        </Button>
       </Form>
     </Container>
   );
