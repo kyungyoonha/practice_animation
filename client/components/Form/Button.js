@@ -36,7 +36,6 @@ const StyledButton = styled.button`
         `;
 
       case 'red':
-        console.log(props.theme.red[0]);
         return css`
           background: ${props.theme.red[0]};
 

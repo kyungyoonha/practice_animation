@@ -1,9 +1,11 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import styled from 'styled-components';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { Input, Button } from '../components/Form';
 import { Container } from '../components/Layout';
 import useInputs from '../hooks/useInputs';
+import { SIGN_UP_REQUEST } from '../reducers/userReducer';
 
 const initialValue = {
   name: '',
@@ -13,14 +15,28 @@ const initialValue = {
 };
 
 const Signup = () => {
-  const { inputs, errors, onChange, validateAll } = useInputs(initialValue);
+  const dispatch = useDispatch();
+  const { inputs, errors, setErrors, onChange, validateAll } = useInputs(initialValue);
+  const { signUpError, signUpDone, signUpLoading } = useSelector((state) => state.user);
+
+  useEffect(() => {
+    if (!signUpError) return;
+
+    setErrors({
+      ...signUpError,
+    });
+  }, [signUpError]);
 
   const onSubmit = useCallback(
     (e) => {
       e.preventDefault();
       const isValid = validateAll();
       if (!isValid) return;
-      console.log('제출 완료');
+
+      dispatch({
+        type: SIGN_UP_REQUEST,
+        data: inputs,
+      });
     },
     [inputs]
   );

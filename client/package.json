@@ -5,12 +5,14 @@
   "main": "index.js",
   "scripts": {
     "dev": "next",
-    "build": "next build"
+    "build": "cross-env NODE_ENV=production next build",
+    "start": "cross-env NODE_ENV=production next start -p 3060"
   },
   "author": "Ryoon",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.1",
+    "cross-env": "^7.0.3",
     "immer": "^8.0.1",
     "next": "^10.0.7",
     "next-redux-wrapper": "^6.0.2",

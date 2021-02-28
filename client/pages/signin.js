@@ -1,9 +1,11 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import styled from 'styled-components';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { Input, Button } from '../components/Form';
 import { Container } from '../components/Layout';
 import useInputs from '../hooks/useInputs';
+import { SIGN_IN_REQUEST } from '../reducers/userReducer';
 
 const initialState = {
   email: '',
@@ -11,13 +13,31 @@ const initialState = {
 };
 
 const Signin = () => {
-  const { inputs, errors, onChange, validateAll } = useInputs(initialState);
+  const dispatch = useDispatch();
+  const { inputs, errors, setErrors, onChange, validateAll } = useInputs(initialState);
+  const { signInError } = useSelector((state) => state.user);
 
-  const onSubmit = useCallback((e) => {
-    e.preventDefault();
-    if (!validateAll()) return;
-    console.log('제출 완료');
-  }, []);
+  useEffect(() => {
+    if (!signInError) return;
+    setErrors({ ...signInError });
+  }, [signInError]);
+
+  const onSubmit = useCallback(
+    (e) => {
+      e.preventDefault();
+      if (!validateAll()) return;
+
+      dispatch({
+        type: SIGN_IN_REQUEST,
+        data: inputs,
+      });
+
+      // dispatch({
+      //   type: SIGN_OUT_REQUEST,
+      // });
+    },
+    [inputs]
+  );
 
   return (
     <Container>
