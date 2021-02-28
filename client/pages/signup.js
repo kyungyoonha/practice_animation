@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import styled from 'styled-components';
 
 import { Input, Button } from '../components/Form';
@@ -13,11 +13,17 @@ const initialValue = {
 };
 
 const Signup = () => {
-  const { inputs, onChange } = useInputs(initialValue);
+  const { inputs, errors, onChange, validateAll } = useInputs(initialValue);
 
-  const onSubmit = useCallback((e) => {
-    console.log('제출');
-  }, []);
+  const onSubmit = useCallback(
+    (e) => {
+      e.preventDefault();
+      const isValid = validateAll();
+      if (!isValid) return;
+      console.log('제출 완료');
+    },
+    [inputs]
+  );
 
   return (
     <Container>
@@ -30,6 +36,7 @@ const Signup = () => {
           placeholder="이름를 입력해주세요"
           required
           onChange={onChange}
+          error={errors.name}
         />
 
         <Input
@@ -40,6 +47,7 @@ const Signup = () => {
           placeholder="이메일를 입력해주세요"
           required
           onChange={onChange}
+          error={errors.email}
         />
 
         <Input
@@ -50,16 +58,18 @@ const Signup = () => {
           placeholder="패스워드를 입력해주세요"
           required
           onChange={onChange}
+          error={errors.pw}
         />
 
         <Input
           label="비밀번호 체크"
           name="pwConfirm"
           type="password"
-          value={inputs.pwConfirm || ''}
+          value={inputs.pwConfirm}
           placeholder="패스워드를 한번 더 입력해주세요"
           required
           onChange={onChange}
+          error={errors.pwConfirm}
         />
 
         <Button onClick={onSubmit} color="blue">

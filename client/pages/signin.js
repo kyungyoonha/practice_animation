@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useCallback } from 'react';
 import styled from 'styled-components';
 
 import { Input, Button } from '../components/Form';
@@ -11,10 +11,12 @@ const initialState = {
 };
 
 const Signin = () => {
-  const { inputs, onChange } = useInputs(initialState);
+  const { inputs, errors, onChange, validateAll } = useInputs(initialState);
 
   const onSubmit = useCallback((e) => {
-    console.log('제출');
+    e.preventDefault();
+    if (!validateAll()) return;
+    console.log('제출 완료');
   }, []);
 
   return (
@@ -28,6 +30,7 @@ const Signin = () => {
           placeholder="이메일를 입력해주세요"
           required
           onChange={onChange}
+          error={errors.email}
         />
 
         <Input
@@ -38,6 +41,7 @@ const Signin = () => {
           placeholder="패스워드를 입력해주세요"
           required
           onChange={onChange}
+          error={errors.pw}
         />
 
         <Button onClick={onSubmit} color="blue">

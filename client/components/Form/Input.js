@@ -48,6 +48,7 @@ const Wrapper = styled.div`
   label {
     display: block;
     margin-bottom: 5px;
+    font-weight: 500;
   }
 
   input {
@@ -60,7 +61,7 @@ const Wrapper = styled.div`
   .err {
     display: none;
     position: absolute;
-    top: 90px;
+    top: 77px;
     font-size: 11px;
     color: ${(props) => props.theme.red};
   }
