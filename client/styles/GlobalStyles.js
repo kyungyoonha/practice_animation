@@ -42,6 +42,11 @@ html, body {
   height: 100%;
 }
 
+a {color: #000; text-decoration: none; outline: none}
+
+ a:hover, a:active {text-decoration: none; color:#000;}
+
+
 `;
 
 export default GlobalStyles;

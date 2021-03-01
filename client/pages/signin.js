@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect } from 'react';
 import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
+import { useRouter } from 'next/router';
 
 import { Input, Button } from '../components/Form';
 import { Container } from '../components/Layout';
@@ -13,6 +14,7 @@ const initialState = {
 };
 
 const Signin = () => {
+  const router = useRouter();
   const dispatch = useDispatch();
   const { inputs, errors, setErrors, onChange, validateAll } = useInputs(initialState);
   const { signInError } = useSelector((state) => state.user);
@@ -32,9 +34,7 @@ const Signin = () => {
         data: inputs,
       });
 
-      // dispatch({
-      //   type: SIGN_OUT_REQUEST,
-      // });
+      router.push('/');
     },
     [inputs]
   );
