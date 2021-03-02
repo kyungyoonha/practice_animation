@@ -19,15 +19,18 @@ const Signup = () => {
   const router = useRouter();
   const dispatch = useDispatch();
   const { inputs, errors, setErrors, onChange, validateAll } = useInputs(initialValue);
-  const { signUpError, signUpDone, signUpLoading } = useSelector((state) => state.user);
+  const { signUpError, signUpDone } = useSelector((state) => state.user);
 
   useEffect(() => {
     if (!signUpError) return;
 
-    setErrors({
-      ...signUpError,
-    });
+    setErrors({ ...signUpError });
   }, [signUpError]);
+
+  useEffect(() => {
+    if (!signUpDone) return;
+    router.push('/signin');
+  }, [signUpDone]);
 
   const onSubmit = useCallback(
     (e) => {
@@ -39,8 +42,6 @@ const Signup = () => {
         type: SIGN_UP_REQUEST,
         data: inputs,
       });
-
-      router.push('/signin');
     },
     [inputs]
   );

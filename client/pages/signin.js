@@ -17,12 +17,17 @@ const Signin = () => {
   const router = useRouter();
   const dispatch = useDispatch();
   const { inputs, errors, setErrors, onChange, validateAll } = useInputs(initialState);
-  const { signInError } = useSelector((state) => state.user);
+  const { signInDone, signInError } = useSelector((state) => state.user);
 
   useEffect(() => {
     if (!signInError) return;
     setErrors({ ...signInError });
   }, [signInError]);
+
+  useEffect(() => {
+    if (!signInDone) return;
+    router.push('/');
+  }, [signInDone]);
 
   const onSubmit = useCallback(
     (e) => {
@@ -33,8 +38,6 @@ const Signin = () => {
         type: SIGN_IN_REQUEST,
         data: inputs,
       });
-
-      router.push('/');
     },
     [inputs]
   );

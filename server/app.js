@@ -29,7 +29,7 @@ if (process.env.NODE_ENV === 'production') {
   app.use(helmet({ contentSecurityPolicy: false }));
   app.use(
     cors({
-      origin: 'Access-Control-Allow-Origin',
+      origin: 'Access-Control-Allow-Origin', // ★ 도메인 변경
       credentials: true,
     })
   );
@@ -38,7 +38,7 @@ if (process.env.NODE_ENV === 'production') {
   app.use(
     cors({
       origin: true,
-      credentials: true,
+      credentials: true, // SSR시 쿠키 전달
     })
   );
 }

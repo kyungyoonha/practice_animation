@@ -6,6 +6,9 @@ const initialState = {
   signUpLoading: false,
   signUpError: null,
   signUpDone: false,
+  loadMyInfoLoading: false,
+  loadMyInfoError: null,
+  loadMyInfoDone: false,
   me: null,
 };
 
@@ -20,6 +23,10 @@ export const SIGN_UP_FAILURE = 'SIGN_UP_FAILURE';
 export const SIGN_OUT_REQUEST = 'SIGN_OUT_REQUEST';
 export const SIGN_OUT_SUCCESS = 'SIGN_OUT_SUCCESS';
 export const SIGN_OUT_FAILURE = 'SIGN_OUT_FAILURE';
+
+export const LOAD_MY_INFO_REQUEST = 'LOAD_MY_INFO_REQUEST';
+export const LOAD_MY_INFO_SUCCESS = 'LOAD_MY_INFO_SUCCESS';
+export const LOAD_MY_INFO_FAILURE = 'LOAD_MY_INFO_FAILURE';
 
 const reducer = (state = initialState, action) =>
   produce(state, (draft) => {
@@ -65,6 +72,21 @@ const reducer = (state = initialState, action) =>
         draft.signOutLoading = false;
         draft.signOutError = action.error;
         return;
+      case LOAD_MY_INFO_REQUEST:
+        draft.loadMyInfoLoading = true;
+        draft.loadMyInfoError = null;
+        draft.loadMyInfoDone = false;
+        return;
+      case LOAD_MY_INFO_SUCCESS:
+        draft.loadMyInfoLoading = false;
+        draft.loadMyInfoDone = true;
+        draft.me = action.data;
+        return;
+      case LOAD_MY_INFO_FAILURE:
+        draft.loadMyInfoLoading = false;
+        draft.loadMyInfoError = action.error;
+        return;
+
       default:
         break;
     }

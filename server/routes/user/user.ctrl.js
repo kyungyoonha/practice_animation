@@ -3,9 +3,16 @@ const passport = require('passport');
 
 const { User } = require('../../models');
 
-exports.getMyInfo = async (req, res, next) => {
+exports.loadMyInfo = async (req, res, next) => {
   try {
-    res.status(200).send('ok');
+    const fullUserWithoutPassword = await User.findOne({
+      where: { email: req.user.email },
+      attributes: {
+        exclude: ['pw'],
+      },
+    });
+
+    res.status(200).json(fullUserWithoutPassword);
   } catch (err) {
     console.error(err);
     next(err);

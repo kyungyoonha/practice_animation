@@ -3,12 +3,9 @@ import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-// import { END } from 'react-saga';
-// import axios from 'axios';
 
 import { Container, Row } from './Layout';
 import { SIGN_OUT_REQUEST } from '../reducers/userReducer';
-import wrapper from '../store/configureStore';
 
 const Header = () => {
   const asPath = useRouter().asPath;
@@ -38,13 +35,13 @@ const Header = () => {
               <Link href="/">Home</Link>
             </li>
             <li className={asPath === '/page1' ? 'active' : ''}>
-              <Link href="page1">페이지2</Link>
+              <Link href="/">페이지2</Link>
             </li>
             <li className={asPath === '/page2' ? 'active' : ''}>
-              <Link href="page2">페이지3</Link>
+              <Link href="/">페이지3</Link>
             </li>
             <li className={asPath === '/page3' ? 'active' : ''}>
-              <Link href="page3">페이지4</Link>
+              <Link href="/">페이지4</Link>
             </li>
           </ul>
         </Row>
@@ -69,18 +66,6 @@ const Header = () => {
     </Wrapper>
   );
 };
-
-// export const getServerSideProps = wrapper.getServerSideProps(async (context) => {
-//   const cookie = context.req ? context.req.headers.cookie : '';
-//   axios.defaults.headers.Cookie = '';
-//   if (context.req && cookie) {
-//     axios.defaults.headers.Cookie = cookie;
-//   }
-
-//   context.store.dispatch({
-//     type:
-//   })
-// });
 
 export default Header;
 
