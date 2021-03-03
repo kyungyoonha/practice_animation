@@ -34,8 +34,8 @@ const Header = () => {
             <li className={asPath === '/' ? 'active' : ''}>
               <Link href="/">Home</Link>
             </li>
-            <li className={asPath === '/page1' ? 'active' : ''}>
-              <Link href="/">페이지2</Link>
+            <li className={asPath === '/animation' ? 'active' : ''}>
+              <Link href="/animation">애니메이션</Link>
             </li>
             <li className={asPath === '/page2' ? 'active' : ''}>
               <Link href="/">페이지3</Link>
@@ -72,11 +72,11 @@ export default Header;
 const Wrapper = styled.div`
   height: 100px;
   line-height: 100px;
-  border: 1px solid darkblue;
+  background: #000;
 
   img {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     vertical-align: middle;
   }
 
@@ -88,7 +88,7 @@ const Wrapper = styled.div`
 
     li.active {
       a {
-        color: #000;
+        color: #fff;
       }
     }
 
@@ -100,9 +100,14 @@ const Wrapper = styled.div`
 
   .header-user {
     float: right;
+
     li {
       margin-left: 20px;
       float: left;
+    }
+
+    a {
+      color: #fff;
     }
   }
 `;
