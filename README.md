@@ -17,3 +17,15 @@
       transform: rotate(360deg);
     }
   }
+
+
+  ### 가상 선택자 :before / :after  
+  - TextHover.js
+- HTML 문서에 정보로 포함되지 않은 요소를 CSS에서 새롭게 생성(content속성)
+- ::before => 요소의 콘텐츠 시작부분에 생성된 컨텐츠를 추가한다.
+- ::after => 요소의 콘텐츠 끝 부분에 생성된 컨텐츠를 추가한다.
+- : 과 :: 차이는 크로스브라우징 차이 (::쓰는게 좋다) 
+
+### 겹치는 텍스트
+- TextHover.js
+- before 과 after, 그림자를 이용하면 쉽게 4개 겹치는 텍스트를 만들 수 있음

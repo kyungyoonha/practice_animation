@@ -14,13 +14,14 @@ const TextEffect = () => {
   );
 };
 
-export default TextEffect;
+export default React.memo(TextEffect);
 
 const Wrapper = styled.div`
   width: 100%;
   height: 700px;
   background: #000;
   position: relative;
+  margin-top: 30px;
 
   .box {
     position: absolute;
