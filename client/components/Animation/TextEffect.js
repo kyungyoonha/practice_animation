@@ -7,7 +7,9 @@ const TextEffect = () => {
     <Wrapper>
       <div className="box">
         {word.split('').map((text, i) => (
-          <AnimationLi num={i}>{text}</AnimationLi>
+          <AnimationLi key={i} num={i}>
+            {text}
+          </AnimationLi>
         ))}
       </div>
     </Wrapper>

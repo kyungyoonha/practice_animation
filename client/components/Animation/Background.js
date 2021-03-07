@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
+//import PropTypes from 'prop-types';
 
 const colors = ['#7babbc', '#b0aabe', '#c8b9cb', '#e6c1cc', '#f1dbd4'];
 
@@ -9,10 +9,11 @@ const Background = (/*{ active = false }*/) => {
   const onClick = () => {
     setActive(!active);
   };
+
   return (
     <Wrapper onClick={onClick}>
       {colors.map((color, idx) => (
-        <Mask key={color} color={color} idx={idx} length={colors.length} active={active} />
+        <Mask key={color} color={color} idx={idx} length={colors.length} className={active ? 'on' : 'off'} />
       ))}
       <div className="background">
         <h1>OVERLAP BACKGROUND</h1>
@@ -27,9 +28,9 @@ const Background = (/*{ active = false }*/) => {
   );
 };
 
-Background.propTypes = {
-  active: PropTypes.string,
-};
+// Background.propTypes = {
+//   active: PropTypes.string,
+// };
 
 export default React.memo(Background);
 
@@ -77,16 +78,6 @@ const Wrapper = styled.div`
     left: 10px;
     color: #fff;
   }
-
-  @keyframes Animation_background {
-    0% {
-      transform: translateX(0px);
-    }
-
-    100% {
-      transform: translateX(100%);
-    }
-  }
 `;
 
 const Mask = styled.div`
@@ -97,6 +88,10 @@ const Mask = styled.div`
   left: 0px;
   z-index: ${(props) => props.length - props.idx};
   background: ${(props) => props.color};
-  animation: Animation_background 1s forwards linear ${(props) => (props.active ? 'running' : 'paused')};
-  animation-delay: ${(props) => `${props.idx * 1}s`};
+  transition: 1s;
+  transition-delay: ${(props) => `${props.idx * 1}s`};
+
+  &.on {
+    transform: translateX(100%);
+  }
 `;
