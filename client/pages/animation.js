@@ -3,13 +3,14 @@ import styled from 'styled-components';
 
 import Header from '../components/Header';
 import { Container } from '../components/Layout';
-import { TextEffect, TextHover, Background, SkewBook, Rain, ContentChange } from '../components/Animation';
+import { TextEffect, TextHover, Background, SkewBook, Rain, ContentChange, Pulse } from '../components/Animation';
 
 const Animation = () => {
   return (
     <>
       <Header />
       <Contents>
+        <Pulse />
         <ContentChange />
         <Rain />
         <SkewBook />
