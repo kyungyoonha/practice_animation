@@ -12,6 +12,7 @@ import {
   ContentChange,
   Pulse,
   Column,
+  Stars,
 } from '../components/Animation';
 
 const Animation = () => {
@@ -19,6 +20,7 @@ const Animation = () => {
     <>
       <Header />
       <Contents>
+        <Stars />
         <Column />
         <Pulse />
         <ContentChange />
