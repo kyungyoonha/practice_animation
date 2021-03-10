@@ -13,6 +13,7 @@ import {
   Pulse,
   Column,
   Stars,
+  Card,
 } from '../components/Animation';
 
 const Animation = () => {
@@ -20,6 +21,7 @@ const Animation = () => {
     <>
       <Header />
       <Contents>
+        <Card />
         <Stars />
         <Column />
         <Pulse />
