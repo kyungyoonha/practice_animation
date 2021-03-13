@@ -37,8 +37,8 @@ const Header = () => {
             <li className={asPath === '/animation' ? 'active' : ''}>
               <Link href="/animation">애니메이션</Link>
             </li>
-            <li className={asPath === '/page2' ? 'active' : ''}>
-              <Link href="/">페이지3</Link>
+            <li className={asPath === '/text' ? 'active' : ''}>
+              <Link href="/text">TEXT</Link>
             </li>
             <li className={asPath === '/page3' ? 'active' : ''}>
               <Link href="/">페이지4</Link>
