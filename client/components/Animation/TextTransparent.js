@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const TextTransparent = () => {
   return (
     <Wrapper>
-      <h1>Text Effect</h1>
+      <h1>Text Scroll Effect</h1>
     </Wrapper>
   );
 };
