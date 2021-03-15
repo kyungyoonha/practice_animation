@@ -13,6 +13,7 @@ import {
   Stars,
   Card,
   Buttons,
+  ButtonEffect,
 } from '../components/Animation';
 
 const Animation = () => {
@@ -20,6 +21,7 @@ const Animation = () => {
     <>
       <Header />
       <Contents>
+        <ButtonEffect />
         <Buttons />
         <Card />
         <Stars />
