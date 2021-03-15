@@ -14,6 +14,7 @@ import {
   Card,
   Buttons,
   ButtonEffect,
+  Split,
 } from '../components/Animation';
 
 const Animation = () => {
@@ -21,6 +22,7 @@ const Animation = () => {
     <>
       <Header />
       <Contents>
+        <Split />
         <ButtonEffect />
         <Buttons />
         <Card />
