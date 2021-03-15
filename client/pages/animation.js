@@ -3,13 +3,24 @@ import styled from 'styled-components';
 
 import Header from '../components/Header';
 import { Container } from '../components/Layout';
-import { Background, SkewBook, Rain, ContentChange, Pulse, Column, Stars, Card } from '../components/Animation';
+import {
+  Background,
+  SkewBook,
+  Rain,
+  ContentChange,
+  Pulse,
+  Column,
+  Stars,
+  Card,
+  Buttons,
+} from '../components/Animation';
 
 const Animation = () => {
   return (
     <>
       <Header />
       <Contents>
+        <Buttons />
         <Card />
         <Stars />
         <Column />

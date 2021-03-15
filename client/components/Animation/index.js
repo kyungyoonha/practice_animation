@@ -7,6 +7,7 @@ export { default as Pulse } from './Pulse';
 export { default as Column } from './Column';
 export { default as Stars } from './Stars';
 export { default as Card } from './Card';
+export { default as Buttons } from './Buttons';
 // Text
 export { default as TextEffect } from './TextEffect';
 export { default as TextHover } from './TextHover';
