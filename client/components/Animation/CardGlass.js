@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const CardGlass = () => {
+const CardGlass = ({ className }) => {
   return (
-    <Wrapper>
+    <Wrapper className={className}>
       <span className="glass" />
       <h1>Card</h1>
       <p>
@@ -36,8 +36,8 @@ const Wrapper = styled.div`
     top: 0;
     left: 0;
     content: '';
-    border-top: 1px solid #fff;
-    border-left: 1px solid #fff;
+    border-top: 4px solid #fff;
+    border-left: 4px solid #fff;
     width: 0%;
     height: 0%;
     transition: 0.3s;
@@ -49,8 +49,8 @@ const Wrapper = styled.div`
     bottom: 0;
     right: 0;
     content: '';
-    border-top: 1px solid #fff;
-    border-left: 1px solid #fff;
+    border-top: 4px solid #fff;
+    border-left: 4px solid #fff;
     width: 0%;
     height: 0%;
     transition: 0.3s;

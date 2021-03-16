@@ -7,7 +7,7 @@ import styled from 'styled-components';
 import wrapper from '../store/configureStore';
 import { Container } from '../components/Layout';
 import { LOAD_MY_INFO_REQUEST } from '../reducers/userReducer';
-import { Card, CardGlass } from '../components/Animation';
+import { Card, CardGlass, CardGradient } from '../components/Animation';
 
 const Home = () => {
   return (
@@ -19,6 +19,7 @@ const Home = () => {
       </Contents>
       <ContentsBlack>
         <CardGlass className="card-list" />
+        <CardGradient className="card-list" />
       </ContentsBlack>
     </>
   );
