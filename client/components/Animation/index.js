@@ -7,6 +7,7 @@ export { default as Pulse } from './Pulse';
 export { default as Column } from './Column';
 export { default as Stars } from './Stars';
 export { default as Card } from './Card';
+export { default as CardGlass } from './CardGlass';
 export { default as Buttons } from './Buttons';
 export { default as ButtonEffect } from './ButtonEffect';
 export { default as Split } from './split';

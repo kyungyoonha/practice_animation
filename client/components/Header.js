@@ -32,10 +32,10 @@ const Header = () => {
         <Row show="m">
           <ul>
             <li className={asPath === '/' ? 'active' : ''}>
-              <Link href="/">Home</Link>
+              <Link href="/">CARD</Link>
             </li>
             <li className={asPath === '/animation' ? 'active' : ''}>
-              <Link href="/animation">애니메이션</Link>
+              <Link href="/animation">ANIMATION</Link>
             </li>
             <li className={asPath === '/text' ? 'active' : ''}>
               <Link href="/text">TEXT</Link>

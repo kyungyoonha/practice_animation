@@ -1,19 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Card = () => {
+const Card = ({ className }) => {
   return (
-    <Wrapper>
-      <StyledCard>
-        <div className="card">
-          <h1>Card</h1>
-          <p>
-            Ad reprehenderit occaecat dolor adipisicing consectetur pariatur commodo non pariatur esse reprehenderit et
-            velit. Ad reprehenderit occaecat dolor adipisicing consectetur pariatur commodo non pariatur esse
-            reprehenderit et velit.
-          </p>
-        </div>
-      </StyledCard>
+    <Wrapper className={className}>
+      <div className="card">
+        <h1>Card</h1>
+        <p>
+          Ad reprehenderit occaecat dolor adipisicing consectetur pariatur commodo non pariatur esse reprehenderit et
+          velit. Ad reprehenderit occaecat dolor adipisicing consectetur pariatur commodo non pariatur esse
+          reprehenderit et velit.
+        </p>
+      </div>
     </Wrapper>
   );
 };
@@ -21,25 +19,13 @@ const Card = () => {
 export default Card;
 
 const Wrapper = styled.div`
-  width: 100%;
-  height: 700px;
-  margin-top: 30px;
-  background: #000;
-  position: relative;
-`;
-
-const StyledCard = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   width: 300px;
   height: 350px;
   background: #fff;
   padding: 30px;
   border-radius: 4%;
   overflow: hidden;
-  box-shadow: 8px 8px 0px #ffffaa;
+  box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.3);
   border: 1px solid #868e96;
 
   h1 {
@@ -52,22 +38,24 @@ const StyledCard = styled.div`
     position: relative;
     height: 100%;
     width: 100%;
+    background: transparent;
     &::before {
       content: '';
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 0;
-      height: 0;
-      background: yellow;
-      z-index: -1;
+      width: 0%;
+      height: 0%;
+      background: rgba(0, 255, 0, 0.3);
+      z-index: 0;
       transition: 0.4s;
     }
 
     &:hover::before {
       width: 300px;
       height: 350px;
+      border: 1px solid blue;
     }
   }
 `;
