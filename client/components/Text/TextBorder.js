@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Test = () => {
+const TextBorder = () => {
   return (
     <Wrapper>
       <Box data-content="Border">Border</Box>
@@ -9,7 +9,7 @@ const Test = () => {
   );
 };
 
-export default Test;
+export default TextBorder;
 
 const Wrapper = styled.div`
   width: 100%;

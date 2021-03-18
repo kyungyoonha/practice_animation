@@ -40,8 +40,8 @@ const Header = () => {
             <li className={asPath === '/text' ? 'active' : ''}>
               <Link href="/text">TEXT</Link>
             </li>
-            <li className={asPath === '/page3' ? 'active' : ''}>
-              <Link href="/">페이지4</Link>
+            <li className={asPath === '/css' ? 'active' : ''}>
+              <Link href="/css">CSS</Link>
             </li>
           </ul>
         </Row>
