@@ -46,6 +46,7 @@ const StyledBook = styled.div`
   padding: 30px 30px 60px;
   border-left: 20px solid #f00;
   font-size: 1rem;
+  transition: 0.5s;
 
   h1 {
     text-align: center;
@@ -74,6 +75,10 @@ const StyledBook = styled.div`
     transform: skewX(-45deg);
     bottom: -29px;
     left: -35px;
+  }
+
+  &:hover {
+    transform: translate(-50%, -50%) rotate(0deg) skewX(0) scale(0.9);
   }
 `;
 

@@ -2,13 +2,14 @@ import React from 'react';
 
 import Header from '../components/Header';
 import { Container } from '../components/Layout';
-import { TextEffect, TextHover, TextTransparent, TextGradient } from '../components/Animation';
+import { TextEffect, TextHover, TextTransparent, TextGradient, TextBoarder } from '../components/Text';
 
 const Text = () => {
   return (
     <>
       <Header />
       <Container>
+        <TextBoarder />
         <TextGradient />
         <TextTransparent />
         <TextEffect />

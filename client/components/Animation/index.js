@@ -12,8 +12,3 @@ export { default as CardGradient } from './CardGradient';
 export { default as Buttons } from './Buttons';
 export { default as ButtonEffect } from './ButtonEffect';
 export { default as Split } from './split';
-// Text
-export { default as TextEffect } from './TextEffect';
-export { default as TextHover } from './TextHover';
-export { default as TextTransparent } from './TextTransparent';
-export { default as TextGradient } from './TextGradient';

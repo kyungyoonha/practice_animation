@@ -11,7 +11,6 @@ import {
   Pulse,
   Column,
   Stars,
-  Card,
   Buttons,
   ButtonEffect,
   Split,
@@ -25,7 +24,6 @@ const Animation = () => {
         <Split />
         <ButtonEffect />
         <Buttons />
-        <Card />
         <Stars />
         <Column />
         <Pulse />
