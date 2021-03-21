@@ -13,3 +13,4 @@ export { default as Buttons } from './Buttons';
 export { default as ButtonEffect } from './ButtonEffect';
 export { default as Split } from './split';
 export { default as RollingBox } from './RollingBox';
+export { default as Icon } from './Icon';

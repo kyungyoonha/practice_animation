@@ -34,6 +34,11 @@ const App = ({ Component }) => {
           href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,400;1,700;1,900&display=swap"
           rel="stylesheet"
         />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+          crossorigin="anonymous"
+        />
       </Head>
       <ThemeProvider theme={theme}>
         <GlobalStyles />

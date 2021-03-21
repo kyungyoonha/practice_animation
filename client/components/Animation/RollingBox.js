@@ -16,7 +16,7 @@ const Wrapper = styled.div`
   height: 700px;
   background: #000;
   margin-top: 30px;
-  position: relaitve;
+  position: relative;
 `;
 
 const Box = styled.div`
@@ -58,19 +58,19 @@ const Box = styled.div`
 
   @keyframes rolling {
     0% {
-      transform: translate(0, 0);
-    }
-    25% {
-      transform: translate(150px, 0);
-    }
-    50% {
       transform: translate(150px, 150px);
     }
-    75% {
+    25% {
       transform: translate(0, 150px);
     }
-    100% {
+    50% {
       transform: translate(0, 0);
+    }
+    75% {
+      transform: translate(150px, 0);
+    }
+    100% {
+      transform: translate(150px, 150px);
     }
   }
 `;

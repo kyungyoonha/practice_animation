@@ -16,7 +16,7 @@ const Wrapper = styled.div`
   height: 700px;
   background: #000;
   margin-top: 30px;
-  position: relaitve;
+  position: relative;
 `;
 
 const Box = styled.div`
