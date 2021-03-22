@@ -17,6 +17,7 @@ import {
   RollingBox,
   Icon,
   Smoke,
+  Pointer,
 } from '../components/Animation';
 
 const Animation = () => {
@@ -24,6 +25,7 @@ const Animation = () => {
     <>
       <Header />
       <Contents>
+        <Pointer />
         <Smoke />
         <Icon />
         <RollingBox />

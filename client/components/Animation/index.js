@@ -15,3 +15,4 @@ export { default as Split } from './split';
 export { default as RollingBox } from './RollingBox';
 export { default as Icon } from './Icon';
 export { default as Smoke } from './Smoke';
+export { default as Pointer } from './Pointer';
