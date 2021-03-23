@@ -1,31 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
+import { WrapperBox } from '../Layout';
 
 const Round = () => {
   return (
-    <Wrapper>
+    <WrapperBox>
       <Box>Round</Box>
-    </Wrapper>
+    </WrapperBox>
   );
 };
 
 export default Round;
-
-const Wrapper = styled.div`
-  width: 100%;
-  height: 700px;
-  background: #fff;
-  margin-top: 30px;
-  position: relative;
-  border: 4px solid #000;
-`;
 
 const Box = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
   font-family: sans-serif;
   text-transform: uppercase;
   font-size: 5rem;
