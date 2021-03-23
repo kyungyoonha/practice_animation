@@ -12,5 +12,6 @@ const Wrapper = styled.div`
   margin-top: 30px;
   width: ${(props) => (props.width ? props.width : '100%')};
   height: ${(props) => (props.height ? props.height : '700px')};
+  line-height: ${(props) => (props.height ? props.height : '700px')};
   background: ${(props) => (props.background ? props.background : '#000')};
 `;
