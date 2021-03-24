@@ -1,33 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Test = () => {
+import { WrapperBox } from '../Layout';
+
+const Water = () => {
   return (
-    <Wrapper>
-      <Box>Test</Box>
-    </Wrapper>
+    <WrapperBox>
+      <Box>Water</Box>
+    </WrapperBox>
   );
 };
 
-export default Test;
-
-const Wrapper = styled.div`
-  width: 100%;
-  height: 700px;
-  background: #000;
-  margin-top: 30px;
-  position: relative;
-`;
+export default Water;
 
 const Box = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
-  font-family: sans-serif;
-  text-transform: uppercase;
-  font-size: 2rem;
-  font-weight: 700;
-  color: #fff;
+  width: 300px;
+  height: 300px;
+  background: #fff;
+  border-radius: 50%;
 `;
