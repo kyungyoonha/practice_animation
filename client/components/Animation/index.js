@@ -16,3 +16,4 @@ export { default as RollingBox } from './RollingBox';
 export { default as Icon } from './Icon';
 export { default as Smoke } from './Smoke';
 export { default as Pointer } from './Pointer';
+export { default as Paper } from './Paper';

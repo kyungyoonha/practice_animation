@@ -4,3 +4,4 @@ export { default as TextHover } from './TextHover';
 export { default as TextTransparent } from './TextTransparent';
 export { default as TextGradient } from './TextGradient';
 export { default as TextShadow } from './TextShadow';
+export { default as LetterSpacing } from './LetterSpacing';

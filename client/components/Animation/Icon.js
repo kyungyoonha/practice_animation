@@ -50,6 +50,7 @@ const Box = styled.div`
     border-left: 4px solid rgb(255, 255, 255, 0);
     border-right: 4px solid rgb(255, 255, 255, 0);
     width: 100%;
+
     height: 100%;
     transition: 0.5s;
   }
