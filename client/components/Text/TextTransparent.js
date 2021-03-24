@@ -1,33 +1,32 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { WrapperBox } from '../Layout';
+
 const TextTransparent = () => {
   return (
-    <Wrapper>
-      <h1>Text Scroll Effect</h1>
-    </Wrapper>
+    <WrapperBox background="url('https://user-images.githubusercontent.com/29701385/110235106-b3d45080-7f71-11eb-9ee5-a1a9bc47cab0.jpg')">
+      <Box>Transparent</Box>
+    </WrapperBox>
   );
 };
 
 export default TextTransparent;
 
-const Wrapper = styled.div`
+const Box = styled.div`
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   width: 100%;
-  height: 700px;
-  margin-top: 30px;
-  background: #000;
-  position: relative;
-  color: white;
+  height: 300px;
+  line-height: 300px;
 
-  h1 {
-    text-align: center;
-    font-size: 8rem;
-    font-weight: 900;
-    height: 700px;
-    line-height: 700px;
-    background-image: linear-gradient(to bottom, red, orange, yellow, green, blue, indigo, violet);
-    background-attachment: fixed;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+  text-align: center;
+  font-size: 8rem;
+  background: rgba(0, 0, 0, 0.7);
+  font-weight: 900;
+  text-transform: uppercase;
+  text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.7);
+  color: #fff;
+  mix-blend-mode: overlay;
 `;

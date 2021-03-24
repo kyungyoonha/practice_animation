@@ -5,11 +5,12 @@ import { Container } from '../components/Layout';
 import {
   TextEffect,
   TextHover,
-  TextTransparent,
+  TextScroll,
   TextGradient,
   TextBoarder,
   TextShadow,
   LetterSpacing,
+  TextTransparent,
 } from '../components/Text';
 
 const Text = () => {
@@ -17,11 +18,12 @@ const Text = () => {
     <>
       <Header />
       <Container>
+        <TextTransparent />
         <LetterSpacing />
         <TextShadow />
         <TextBoarder />
         <TextGradient />
-        <TextTransparent />
+        <TextScroll />
         <TextEffect />
         <TextHover />
       </Container>
