@@ -18,3 +18,4 @@ export { default as Smoke } from './Smoke';
 export { default as Pointer } from './Pointer';
 export { default as Paper } from './Paper';
 export { default as Water } from './Water';
+export { default as Loading } from './Loading';

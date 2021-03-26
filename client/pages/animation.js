@@ -20,6 +20,7 @@ import {
   Pointer,
   Paper,
   Water,
+  Loading,
 } from '../components/Animation';
 
 const Animation = () => {
@@ -27,6 +28,7 @@ const Animation = () => {
     <>
       <Header />
       <Contents>
+        <Loading />
         <Water />
         <Paper />
         <Pointer />
